@@ -24,24 +24,41 @@ addButton.addEventListener("click", () => {
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  let tmp = Book(
-    titleInput.value,
-    authorInput.value,
-    pagesInput.value,
-    checkboxInput.checked
-  );
+  if (titleInput.value == "") {
+    titleInput.style.border = "1px solid red";
+  }
 
-  books.add(tmp);
-  booksDiv.appendChild(tmp.getDiv());
+  if (authorInput.value == "") {
+    authorInput.style.border = "1px solid red";
+  }
 
-  //cleanup
-  form.style.display = form.style.display === "none" ? "flex" : "none";
-  titleInput.value = "Title";
-  authorInput.value = "Title";
-  pagesInput.value = "321";
-  checkboxInput.checked = false;
+  if (titleInput.value && authorInput.value) {
+    if (authorInput.value) {
+      authorInput.style.border = "none";
+    }
+    if (titleInput.value) {
+      titleInput.style.border = "none";
+    }
 
-  console.log(books.has(tmp));
+    let tmp = Book(
+      titleInput.value,
+      authorInput.value,
+      pagesInput.value,
+      checkboxInput.checked
+    );
+
+    books.add(tmp);
+    booksDiv.appendChild(tmp.getDiv());
+
+    //cleanup
+    form.style.display = form.style.display === "none" ? "flex" : "none";
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    checkboxInput.checked = false;
+  }
+
+  //   console.log(books.has(tmp));
 });
 
 const Book = (title, author, pages, isRead, div) => {

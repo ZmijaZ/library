@@ -81,7 +81,7 @@ footer {
   flex-direction: column;
   align-items: center;
 
-  width: max(15vw, 200px);
+  width: max(20vw, 200px);
 
   background-color: whitesmoke;
   border-radius: 10px;
@@ -110,16 +110,20 @@ input:focus {
   outline: none;
 }
 
-/* #checkboxDiv {
+#checkboxDiv {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
 
-  width: max(10vw, 90%);
+  width: 80%;
+  padding: 10px;
+}
 
-  border: 1px solid blue;
+label {
+  width: 100%;
+}
 
-} */
+#checkBox {
+  margin-bottom: 0px;
+}
 
 #submitButton {
   padding: 10px;
