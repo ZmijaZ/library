@@ -11,7 +11,20 @@
       <h1>library</h1>
       <button>Log in</button>
     </header>
-    <div class="main"></div>
+    <div class="main">
+      <button id="addButton">Add book</button>
+      <form action="" id="form">
+        <h2>Add new book</h2>
+        <input type="text" id="title" placeholder="Title" />
+        <input type="text" id="author" placeholder="Author" />
+        <input type="number" id="pages" placeholder="Pages" min="1" />
+        <div id="checkboxDiv">
+          <label for="checkBox">Have you read it? </label>
+          <input type="checkbox" id="checkBox" />
+        </div>
+        <button id="submitButton">Submit</button>
+      </form>
+    </div>
     <footer>
       <h2>Courtesy of ZmijaZ</h2>
     </footer>
