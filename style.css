@@ -1,6 +1,7 @@
 *,
 *::after,
 *::backdrop {
+  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
@@ -10,6 +11,15 @@
   --footer-height: min(50px, 3vh);
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* body {
+  margin-bottom: 100px;
+} */
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 header {
@@ -34,6 +44,15 @@ header button {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: var(--spacing-sm);
   height: var(--footer-height);
 }
 .main {
@@ -42,6 +61,8 @@ footer {
 
   display: flex;
   flex-direction: column;
+
+  max-width: 100vw;
 
   align-items: center;
 }
@@ -117,4 +138,50 @@ button:hover {
 
 #submitButton:hover {
   background-color: rgb(131, 218, 2);
+}
+
+.books {
+  max-width: 80%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10%;
+}
+
+.books div {
+  background-color: white;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.books #buttonsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.books #buttonsDiv button {
+  padding: 10px;
+  width: 90%;
+  margin: 5px;
+  font-size: 15px;
+
+  border-radius: 5px;
+  border: none;
+}
+
+.books #buttonRead:hover {
+  opacity: 0.8;
+}
+
+.books #buttonRemove {
+  /* background-color: ; */
 }
